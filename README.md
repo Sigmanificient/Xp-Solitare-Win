@@ -5,5 +5,4 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/Sigmanificient/Xp-Solitare-Win)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Sigmanificient/Xp-Solitare-Win)
 
-
 Falling cards animation using Python OOP.
