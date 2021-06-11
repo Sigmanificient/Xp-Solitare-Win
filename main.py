@@ -17,7 +17,7 @@ class Card:
     w, h = (71, 96)
 
     def __init__(self):
-        """ Initialize a Card to be moved on the board. """
+        """Initialize a Card to be moved on the board."""
         self.sprite = pygame.Surface((Card.w, Card.h))
         self.rect = self.sprite.get_rect()
 
