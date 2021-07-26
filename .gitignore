@@ -4,3 +4,8 @@
 # Python
 __pycache__
 venv
+
+# Pyinstaller
+dist
+build
+*.spec
