@@ -5,7 +5,7 @@ import pygame
 
 
 class Card:
-    sheet = pygame.image.load("img/cards.png").convert()
+    __sheet = None
     w, h = (71, 96)
 
     def __init__(self):
@@ -17,7 +17,7 @@ class Card:
             Card.w * randint(0, 12), Card.h * randint(0, 3), Card.w, Card.h
         )
 
-        self.sprite.blit(Card.sheet, self.rect, offset_rect)
+        self.sprite.blit(self.sheet, self.rect, offset_rect)
 
         self.rect.x = WIN_WIDTH if randint(0, 1) else -Card.w
         self.rect.y = randint(-WIN_HEIGHT, WIN_HEIGHT)
@@ -26,6 +26,13 @@ class Card:
         self.y_momentum = 0
         self.direction = (1 if randint(0, 1) else -1) * randint(1, 3)
         self.gain = 0.2
+
+    @property
+    def sheet(self):
+        if self.__sheet is None:
+            self.__sheet = pygame.image.load("img/cards.png").convert_alpha()
+
+        return self.__sheet
 
     def move(self, screen_rect):
         if self.rect.y > WIN_HEIGHT - Card.h:

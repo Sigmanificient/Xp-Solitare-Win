@@ -7,8 +7,6 @@ class App:
 
     def __init__(self):
         self.is_running = False
-        self.cards = [Card() for _ in range(100)]
-
         self.clock = pygame.time.Clock()
 
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
@@ -16,6 +14,8 @@ class App:
 
         icon = pygame.Surface((32, 32), pygame.SRCALPHA)
         pygame.display.set_icon(icon)
+
+        self.cards = [Card() for _ in range(100)]
 
     def run(self):
         self.is_running = True
