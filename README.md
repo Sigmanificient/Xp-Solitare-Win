@@ -6,4 +6,17 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/Sigmanificient/Xp-Solitare-Win)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Sigmanificient/Xp-Solitare-Win)
 
-Falling cards animation using Python OOP.
+A pygame replicate of the xp windows solitaire end screen.
+
+## Installation
+
+Download the files form the repository.
+```bash
+git clone https://github.com/Sigmanificient/Xp-Solitare-Win
+```
+
+Install the python requirements packages.
+
+```bash
+python -m pip install requirements.txt
+```
