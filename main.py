@@ -13,7 +13,7 @@ screen.fill((0, 99, 0))
 
 
 class Card:
-    sheet = pygame.image.load("cards.png").convert()
+    sheet = pygame.image.load("img/cards.png").convert()
     w, h = (71, 96)
 
     def __init__(self):
@@ -21,10 +21,14 @@ class Card:
         self.sprite = pygame.Surface((Card.w, Card.h))
         self.rect = self.sprite.get_rect()
 
-        offset_rect = pygame.Rect(Card.w * randint(0, 12), Card.h * randint(0, 3), Card.w, Card.h)
+        offset_rect = pygame.Rect(
+            Card.w * randint(0, 12), Card.h * randint(0, 3), Card.w, Card.h
+        )
+
         self.sprite.blit(Card.sheet, self.rect, offset_rect)
 
-        self.rect.x, self.rect.y = WIN_WIDTH if randint(0, 1) else -Card.w, randint(-WIN_HEIGHT, WIN_HEIGHT)
+        self.rect.x = WIN_WIDTH if randint(0, 1) else -Card.w
+        self.rect.y = randint(-WIN_HEIGHT, WIN_HEIGHT)
         self.invincible_cycles = 10
 
         self.y_momentum = 0
@@ -53,7 +57,9 @@ cards = [Card() for i in range(100)]
 
 is_running = True
 while is_running:
-    pygame.display.set_caption(f"Solitaire XP Win - By Edhyjox - {clock.get_fps():.0f} Fps")
+    pygame.display.set_caption(
+        f"Solitaire XP Win - By Sigmanificient - {clock.get_fps():.0f} Fps"
+    )
 
     for card in cards:
         card.move()
