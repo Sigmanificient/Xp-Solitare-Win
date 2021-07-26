@@ -1,4 +1,4 @@
-from app.contstants import WIN_WIDTH, WIN_HEIGHT
+from app.constants import WIN_WIDTH, WIN_HEIGHT
 from random import randint
 
 import pygame
