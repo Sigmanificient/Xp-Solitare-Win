@@ -1,4 +1,4 @@
-from app.constants import WIN_WIDTH, WIN_HEIGHT
+from app.constants import WIN_WIDTH, WIN_HEIGHT, MAX_FPS, GREEN
 from app.card import Card
 import pygame
 
@@ -19,7 +19,7 @@ class App:
 
     def run(self):
         self.is_running = True
-        self.screen.fill((0, 99, 0))
+        self.screen.fill(GREEN)
 
         while self.is_running:
             pygame.display.set_caption(
@@ -36,7 +36,7 @@ class App:
                 if event.type == pygame.QUIT:
                     self.is_running = False
 
-            self.clock.tick(60)
+            self.clock.tick(MAX_FPS)
 
     def __del__(self):
         pygame.display.quit()
